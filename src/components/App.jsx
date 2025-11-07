@@ -1,13 +1,17 @@
-import React from "react";
-import blogData from "../data/blog";
+import React from "react"; // setting up React dependencies/libraries
+import blogData from "../data/blog"; // import blog component data
+import Header from "./Header"; // import Header component data
+import About from "./About"; // import About component data
+import ArticleList from "./ArticleList"; // import ArticleList component data
 
 console.log(blogData);
 
-function App() {
+function App() { // set up to display all relevant info from children componenets
   return (
     <div className="App">
-      You're on your own from here! Follow the deliverables; test things out in
-      the browser as you write your code; and good luck!
+      <Header name={blogData.name} />
+      <About image={blogData.image} about={blogData.about} />
+      <ArticleList posts={blogData.posts} />
     </div>
   );
 }
